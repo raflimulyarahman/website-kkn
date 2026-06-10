@@ -1,0 +1,614 @@
+:root {
+    /* Vibrant "Hidup" Palette - Mentawai Pesisir Theme */
+    --color-bg-start: #FFF4C2; /* Warm sand */
+    --color-bg-end: #CCFBF1; /* Bright sea teal */
+    --color-primary: #F59E0B; /* Vibrant gold */
+    --color-primary-dark: #D97706; /* Deep gold */
+    --color-heading: #0F766E; /* Lively sea teal */
+    --color-badge: #10B981; /* Fresh forest green */
+    --color-card: #FFFFFF; /* Crisp white */
+    --color-text: #1E293B; /* Sharp dark blue-grey */
+    --color-text-light: #64748B;
+    
+    --radius: 16px;
+    --shadow: 0 8px 24px rgba(15, 118, 110, 0.08); /* Teal-tinted subtle shadow */
+    --shadow-hover: 0 16px 32px rgba(245, 158, 11, 0.15); /* Gold-tinted hover shadow */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+/* App container takes full width now */
+.app-container {
+    width: 100%;
+    background-color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Inner container */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-heading);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+p {
+    font-size: 0.95rem;
+}
+
+.section {
+    padding: 4rem 1.25rem;
+}
+
+.section-gray {
+    background-color: #F8FAFC; /* Clean, lively soft backdrop */
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 100px; /* Fully rounded for modern feel */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(234, 88, 12, 0.35);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.btn-outline {
+    background-color: rgba(245, 158, 11, 0.05);
+    color: #EA580C;
+    border: 2px solid #F59E0B;
+}
+
+.btn-outline:hover {
+    background-color: rgba(245, 158, 11, 0.15);
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.25);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(22, 163, 74, 0.35);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* 1. Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--color-bg-start) 0%, var(--color-bg-end) 100%);
+    padding: 5rem 1.25rem 6rem;
+    position: relative;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    background: linear-gradient(90deg, #0F766E, #0369A1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.wave-decoration {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,64 C480,140 960,-12 1440,64 L1440,120 L0,120 Z" fill="%23ffffff"/></svg>');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+/* 2. Tentang Section */
+#tentang p {
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* 3. Program Section */
+.program-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.card {
+    background-color: var(--color-card);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(15, 118, 110, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.program-card .badge {
+    display: inline-block;
+    background-color: var(--color-badge);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 100px;
+    margin-bottom: 0.75rem;
+    align-self: flex-start;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.program-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.program-card p {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+/* 4. Mengapa Dukungan Anda Penting */
+.reasons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.reason-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background-color: var(--color-card);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(15, 118, 110, 0.05);
+}
+
+.reason-item:hover {
+    transform: translateX(5px);
+    border-color: rgba(15, 118, 110, 0.2);
+}
+
+.reason-icon {
+    background: linear-gradient(135deg, #0F766E 0%, #064E3B 100%);
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+}
+
+.reason-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* 5. Informasi Donasi */
+.donation-card {
+    background-color: var(--color-card);
+    border-radius: 24px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 12px 35px rgba(245, 158, 11, 0.1);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(245, 158, 11, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.donation-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #F59E0B, #EA580C);
+}
+
+.bank-info {
+    margin-bottom: 1.75rem;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px dashed rgba(15, 118, 110, 0.15);
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.info-row span {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+.info-row strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    color: var(--color-text);
+}
+
+.info-row strong#va-number {
+    font-size: 1.5rem;
+    color: var(--color-heading);
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #0F766E, #0369A1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.donation-note {
+    font-size: 0.9rem;
+    color: var(--color-heading);
+    text-align: center;
+    background-color: #CCFBF1;
+    padding: 1.25rem;
+    border-radius: 16px;
+    font-weight: 500;
+}
+
+/* 6. Konfirmasi Donasi */
+.confirm-text {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    background-color: var(--color-card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(15, 118, 110, 0.05);
+}
+
+.confirm-text strong {
+    display: block;
+    margin-top: 1rem;
+    color: var(--color-heading);
+    font-size: 0.9rem;
+}
+
+.confirm-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* 7. Penutup / CTA Akhir */
+.cta-section {
+    text-align: center;
+    background: linear-gradient(180deg, #ffffff 0%, var(--color-bg-start) 100%);
+    padding-bottom: 5rem;
+}
+
+.cta-section h2 {
+    color: var(--color-heading);
+    margin-bottom: 1.25rem;
+    font-size: 1.8rem;
+}
+
+.cta-section p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.scan-note {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 2.5rem !important;
+    font-style: italic;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background-color: #0F766E;
+    color: #ffffff;
+}
+
+.footer p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Toast */
+.toast {
+    visibility: hidden;
+    min-width: 140px;
+    background: linear-gradient(135deg, #0F766E 0%, #064E3B 100%);
+    color: #fff;
+    text-align: center;
+    border-radius: 100px;
+    padding: 12px 24px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    box-shadow: 0 8px 25px rgba(15, 118, 110, 0.4);
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & DESKTOP)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+    .section {
+        padding: 5rem 2rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 8rem 2rem 10rem;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .hero-actions .btn {
+        width: auto;
+        min-width: 240px;
+        padding: 1rem 2rem;
+        font-size: 1.05rem;
+    }
+
+    /* Tentang */
+    #tentang p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Program Grid */
+    .program-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .program-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .program-card p {
+        font-size: 0.95rem;
+    }
+
+    .program-card.full-width {
+        grid-column: 1 / -1;
+    }
+
+    /* Mengapa Dukungan Anda Penting */
+    .reasons-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .reason-item {
+        flex: 1 1 calc(50% - 1.5rem);
+        max-width: 45%;
+        padding: 1.5rem;
+    }
+    
+    .reason-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+    }
+    
+    .reason-item p {
+        font-size: 1.05rem;
+    }
+    
+    .reason-item:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Informasi Donasi */
+    .donation-card {
+        max-width: 650px;
+        margin: 2.5rem auto;
+        padding: 3rem;
+    }
+    
+    .donation-note {
+        max-width: 650px;
+        margin: 0 auto;
+        font-size: 1rem;
+    }
+
+    /* Konfirmasi Donasi */
+    .confirm-text {
+        max-width: 750px;
+        margin: 0 auto 2.5rem;
+        font-size: 1.1rem;
+        padding: 2rem;
+    }
+
+    .confirm-text strong {
+        font-size: 1.15rem;
+        margin-top: 1.25rem;
+    }
+
+    .confirm-actions {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .confirm-actions .btn {
+        width: auto;
+        min-width: 300px;
+        padding: 1rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Program Grid */
+    .program-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    /* Mengapa Dukungan Anda Penting */
+    .reasons-list {
+        flex-wrap: nowrap;
+        gap: 2rem;
+    }
+
+    .reason-item {
+        flex: 1;
+        max-width: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 2rem;
+    }
+
+    .reason-icon {
+        width: 72px;
+        height: 72px;
+        font-size: 2rem;
+        margin: 0 auto 1.5rem;
+    }
+    
+    .reason-item:hover {
+        transform: translateY(-10px);
+    }
+}
